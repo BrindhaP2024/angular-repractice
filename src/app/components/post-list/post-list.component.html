@@ -1,0 +1,6 @@
+<p>post-list works!</p>
+<app-search (searchEvent)="filterPosts($event)"></app-search>
+
+<ul>
+  <li *ngFor="let post of filteredPosts">{{ post.title }}</li>
+</ul>
