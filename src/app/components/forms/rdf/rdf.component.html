@@ -1,0 +1,77 @@
+Reactive Driven Form
+<pre>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" formControlName="firstName" />
+  @if (hasError('firstName', 'required')) { <div>First Name is required</div> }
+  @if (hasError('firstName', 'minlength')) { <div>Minimum 3 characters required</div> }
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" formControlName="lastName" />
+  @if (hasError('lastName', 'required')) { <div>Last Name is required</div> }
+  @if (hasError('lastName', 'minlength')) { <div>Minimum 3 characters required</div> }
+
+  <label for="userName">Username:</label>
+  <input type="text" id="userName" formControlName="userName" />
+  @if (hasError('userName', 'required')) { <div>Username is required</div> }
+  @if (hasError('userName', 'pattern')) { <div>Only letters, numbers, underscore allowed</div> }
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email" />
+  @if (hasError('email', 'required')) { <div>Email is required</div> }
+  @if (hasError('email', 'email')) { <div>Enter a valid email</div> }
+
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="text" id="phoneNumber" formControlName="phoneNumber" />
+  @if (hasError('phoneNumber', 'required')) { <div>Phone Number is required</div> }
+  @if (hasError('phoneNumber', 'pattern')) { <div>Enter a valid 10-digit phone number</div> }
+
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" formControlName="dob" />
+  @if (hasError('dob', 'required')) { <div>Date of Birth is required</div> }
+
+  <label>Gender:</label>
+  <div>
+    <label><input type="radio" formControlName="gender" value="Male" /> Male</label>
+    <label><input type="radio" formControlName="gender" value="Female" /> Female</label>
+  </div>
+  @if (hasError('gender', 'required')) { <div>Gender is required</div> }
+
+  <label for="address">Address:</label>
+  <textarea id="address" formControlName="address"></textarea>
+  @if (hasError('address', 'required'))  { <div>Address is required</div> }
+  @if (hasError('address', 'minlength')) { <div>Minimum 10 characters required</div> }
+
+  <label for="city">City:</label>
+  <input type="text" id="city" formControlName="city" />
+  @if (hasError('city', 'required')) { <div>City is required</div> }
+
+  <label for="state">State:</label>
+  <select id="state" formControlName="state">
+    @for (state of states(); track state.code) {
+      <option [value]="state.code">{{ state.name }}</option>
+    }
+  </select>
+  @if (hasError('state', 'required')) { <div>State is required</div> }
+
+  <label for="zipCode">Zip Code:</label>
+  <input type="text" id="zipCode" formControlName="zipCode" />
+  @if (hasError('zipCode', 'required')) { <div>Zip Code is required</div> }
+  @if (hasError('zipCode', 'pattern')) { <div>Enter a valid 5-digit Zip Code</div> }
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" formControlName="password" />
+  @if (hasError('password', 'required')) { <div>Password is required</div> }
+  @if (hasError('password', 'minlength')) { <div>Minimum 6 characters required</div> }
+
+  <label for="confirmPassword">Confirm Password:</label>
+  <input type="password" id="confirmPassword" formControlName="confirmPassword" />
+  @if (hasError('confirmPassword', 'required')) { <div>Confirm Password is required</div> }
+  @if (hasPasswordMismatch()) { <div>Passwords do not match</div> }
+
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+
+<p>Form Value: {{ userForm.value | json }}</p>
+</pre>

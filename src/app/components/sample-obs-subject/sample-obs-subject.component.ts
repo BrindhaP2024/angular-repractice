@@ -17,8 +17,9 @@ export class SampleObsSubjectComponent {
 
   let sub: Subject<any> = new Subject();
    sub.subscribe(x => console.log('from app subject'));
-   sub.next('next to be.....');
-   sub.next('go next....');
+   sub.next('next to be');
+   sub.next('go next');
+   sub.complete();
 
   }
   emit(){

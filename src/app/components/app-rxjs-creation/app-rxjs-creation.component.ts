@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  of, from, interval, timer, combineLatest, zip, merge, concat
-} from 'rxjs';
-import {
-  filter, distinctUntilChanged, take, skip
-} from 'rxjs/operators';
+import {of, from, interval, timer, combineLatest, zip, merge, concat} from 'rxjs';
+import {filter, distinctUntilChanged, take, skip} from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs-creation',
+  imports:[],
   template: `<h2>Check console for Creation & Filtering operators</h2>`,
   styleUrls: ['./app-rxjs-creation.component.css']
 })
