@@ -1,0 +1,76 @@
+<p>bindings works!</p>
+
+<div class="binding">
+  <p>I am learning {{Course}} version 19</p>
+</div>
+
+<div>
+  <h2>Dynamic Button</h2>
+  
+  <label for="buttonText">Button Text:</label>
+  <input type="text" id="buttonText" [(ngModel)]="buttonText">
+  
+  <label for="buttonType">Button Type:</label>
+  <button (click)="toggleButton()">{{buttonType}}</button>
+  
+  <label for="isDisabled">Disable Button:</label>
+  <input type="checkbox" id="isDisabled" [(ngModel)]="isDisabled">
+  
+  <label for="buttonColor">Button Color:</label>
+  <input type="color" id="buttonColor" [(ngModel)]="buttonColor">
+  
+  <label for="isPrimary">Primary Button:</label>
+  <input type="checkbox" id="isPrimary" [(ngModel)]="isDanger">
+</div>
+
+<!-- Input Value Property -->
+
+<div>
+  <label for="userName">User Name:</label>
+  <input type="text" id="userName" [value]="userName">
+</div>
+
+<!-- Anchor Href Property -->
+
+<div>
+  <label for="linkUrl">Website URL:</label>
+  <input type="text" id="linkUrl" [(ngModel)]="linkUrl">
+</div>
+<a [href]="linkUrl" target="_blank">Visit</a>
+
+<!-- Image Source Property -->
+
+<div>
+  <label for="imageUrl">Image URL:</label>
+  <input type="text" id="imageUrl" [(ngModel)]="imageUrl">
+</div>
+<img [src]="imageUrl" alt="Dynamic Image" width="200" height="200">
+<!-- STYLE  -->
+
+<div>
+    <label for="textColor">Text Color:</label>
+    <input type="color" id="textColor" [(ngModel)]="textColor">
+  </div>
+  <p [style.color]="textColor">This text changes color dynamically.</p>
+  
+  <!-- Background Color Binding -->
+  
+  <div>
+    <label for="bgColor">Background Color:</label>
+    <input type="color" id="bgColor" [(ngModel)]="bgColor">
+  </div>
+  <div [style.background-color]="bgColor" class="styled-div">
+    This div changes background color dynamically.
+  </div>
+
+
+
+  <!-- 2 way binding sample usage -->
+
+<div>
+    <h3>Child Component B</h3>
+    <p>Data from Parent: {{ data }}</p>
+
+    <button (click)="changeData()">Change Data in Parent</button>
+  </div>
+  
