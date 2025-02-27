@@ -11,11 +11,13 @@ import { RdfComponent } from "./components/forms/rdf/rdf.component";
 import { LifecyclesComponent } from "./components/lifecycles/lifecycles.component";
 import { CommonModule } from '@angular/common';
 import { BindingsComponent } from "./components/bindings/bindings.component";
+import { ControlFlowComponent } from "./components/control-flow/control-flow.component";
+import { PipesComponent } from "./components/pipes/pipes.component";
 
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterOutlet, TdfFormComponent, RdfComponent, CommonModule, BindingsComponent],
+  imports: [CommonModule, PipesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -36,7 +38,5 @@ export class AppComponent {
 
   constructor(private SampleService:SampleService){
        this.SampleService.sub.subscribe(x => console.log('from the subscribe',x));
-
-
   }
 }

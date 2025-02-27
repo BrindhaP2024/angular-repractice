@@ -1,0 +1,34 @@
+<p>directives works!</p>
+<!-- ngIf -->
+<button (click) ="toggleContent()">Toggle Content</button>
+<div *ngIf="showContent">
+  <p>Name: Brindha</p>
+  <p>Job Title: MEAN Stack Developer</p>
+</div>
+
+<!-- ngFor -->
+
+<h3>ngFor Sample code</h3>
+<ul>
+  <li *ngFor="let item of items; let i = index; trackBy: trackByFn">
+    {{ i + 1 }}. {{ item.name }}
+  </li>
+</ul>
+
+<!-- ngSwitch -->
+<h2>Select a Template</h2>
+<div class="button-group">
+  <button class="btn btn-primary" (click)="selectTemplate('template1')">Template 1</button>
+  <button class="btn btn-primary" (click)="selectTemplate('template2')">Template 2</button>
+</div>
+<div [ngSwitch]="selectedTemplate">
+  <ng-template ngSwitchCase="template1">
+    <p>This is content for Template 1.</p>
+  </ng-template>
+  <ng-template ngSwitchCase="template2">
+    <p>This is content for Template 2.</p>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+    <p>Select a template to display its content.</p>
+  </ng-template>
+</div>

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { RxjsCreationComponent } from './components/app-rxjs-creation/app-rxjs-creation.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 
 export const routes: Routes = [
   {
@@ -23,16 +24,13 @@ export const routes: Routes = [
         title: 'Sample Obs Subject'
       },
       {
-        path: 'search',
-        loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
-        title: 'Search'
-      },
-      {
         path: '',
         redirectTo: 'post-list',
         pathMatch: 'full'
       }
     ]
   },
-  { path: '**', redirectTo: 'rxjs-creation' }
+  {path:'pipes',component:PipesComponent},
+  { path: '**', redirectTo: 'rxjs-creation' },
+
 ];

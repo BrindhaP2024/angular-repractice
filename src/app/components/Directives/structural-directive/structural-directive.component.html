@@ -1,0 +1,28 @@
+<p>structural-directive works!</p>
+<p>attribute-directives works!</p>
+
+<!-- ngClass Directive -->
+<div [ngClass]="{'active': isActive, 'highlighted': isHighlighted}">
+  This div will have 'active' and 'highlighted' classes conditionally.
+</div>
+<button (click)="isActive = !isActive">Toggle Active Class</button>
+<button (click)="toggleHighlight()">Toggle Highlighted Class</button>
+
+<!-- ngStyle Directive -->
+<div [ngStyle]="{'color': textColor, 'font-size': fontSize}">
+  This text will have dynamic styles based on the component properties.
+</div>
+
+<!-- ngModel Directive -->
+<input [(ngModel)]="username" placeholder="Enter your username">
+<p>Your username is: {{ username }}</p>
+
+
+<!-- custom directive example  -->
+<!-- src/app/app.component.html -->
+<h1>Text Color Directive Example</h1>
+<input type="text" [(ngModel)]="defaultColor" placeholder="Enter default color">
+<input type="text" [(ngModel)]="hoverColor" placeholder="Enter hover color">
+<!-- <p [appCustomDirective] [defaultColor]="defaultColor" [hoverColor]="hoverColor">
+  Hover over this text to change its color!
+</p> -->

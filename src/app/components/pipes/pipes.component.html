@@ -1,0 +1,19 @@
+<p>pipes works!</p>
+
+<h3>Learning Angular {{ text | uppercase }}</h3>
+
+<h3>I bought this book around the price {{ price | currency: 'USD' }}</h3>
+
+<h3>Purchased on: {{ purchasedOn | date: 'fullDate' | uppercase }}</h3>
+
+<h3>Purchased on (shortDate): {{ purchasedOn | date: 'shortDate' }}</h3>
+<h3>Purchased on (mediumDate): {{ purchasedOn | date: 'mediumDate' }}</h3>
+<h3>Purchased on (longDate): {{ purchasedOn | date: 'longDate' }}</h3>
+<h3>Purchased on (fullDate): {{ purchasedOn | date: 'fullDate' }}</h3>
+
+<h3>Purchased on (custom format): {{ purchasedOn | date: 'yyyy/MM/dd HH:mm:ss' }}</h3>
+
+<h3>Discount: {{ discount | percent: '1.0-2' }}</h3>
+
+<h3>Users Array in JSON Format:</h3>
+<pre>{{ users | json }}</pre>

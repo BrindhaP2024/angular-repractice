@@ -1,7 +1,4 @@
-Reactive Driven Form
-<pre>
-
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
   <label for="firstName">First Name:</label>
   <input type="text" id="firstName" formControlName="firstName" />
   @if (hasError('firstName', 'required')) { <div>First Name is required</div> }
@@ -40,7 +37,7 @@ Reactive Driven Form
 
   <label for="address">Address:</label>
   <textarea id="address" formControlName="address"></textarea>
-  @if (hasError('address', 'required'))  { <div>Address is required</div> }
+  @if (hasError('address', 'required')) { <div>Address is required</div> }
   @if (hasError('address', 'minlength')) { <div>Minimum 10 characters required</div> }
 
   <label for="city">City:</label>
@@ -50,7 +47,7 @@ Reactive Driven Form
   <label for="state">State:</label>
   <select id="state" formControlName="state">
     @for (state of states(); track state.code) {
-      <option [value]="state.code">{{ state.name }}</option>
+    <option [value]="state.code">{{ state.name }}</option>
     }
   </select>
   @if (hasError('state', 'required')) { <div>State is required</div> }
@@ -74,4 +71,3 @@ Reactive Driven Form
 </form>
 
 <p>Form Value: {{ userForm.value | json }}</p>
-</pre>

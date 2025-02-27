@@ -1,0 +1,19 @@
+<div>
+
+
+  @if (isLoggedIn && isAdmin) {
+    <div>
+      <p>Welcome, Admin!</p>
+    </div>
+  }
+  @else if (isLoggedIn && !isAdmin) {
+    <div>
+      <p>Welcome, User!</p>
+    </div>
+  }
+  @else {
+    <div>
+      <p>Please, Login to Continue!</p>
+    </div>
+  }
+</div>
