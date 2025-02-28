@@ -1,0 +1,10 @@
+<app-child1 #child1>
+  <p #singleContent>Projected Content 1</p>
+  <p class="multiple">Projected Content 2</p>
+  <p class="multiple">Projected Content 3</p>
+</app-child1>
+
+<app-child1 #child2></app-child1>
+
+<button (click)="getChildMessages()">Get Child Messages</button>
+<p>{{ childMessage }}</p>
