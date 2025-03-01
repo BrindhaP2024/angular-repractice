@@ -1,0 +1,15 @@
+<button (click)="show = !show">Toggle Message</button>
+
+<ng-container *ngIf="show; else hiddenTemplate">
+  <p>The message is visible.</p>
+</ng-container>
+
+<ng-template #hiddenTemplate>
+  <p>The message is hidden.</p>
+</ng-template>
+
+<!-- ngcontent -->
+
+<div class="content">
+  <ng-content></ng-content>
+</div>
