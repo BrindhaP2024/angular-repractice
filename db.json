@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": "183",
+      "name": "Laptop",
+      "price": 20
+    },
+    {
+      "id": "742",
+      "name": "HEllp",
+      "price": 22
+    },
+    {
+      "id": 567,
+      "name": "Hello",
+      "price": 3
+    },
+    {
+      "id": 943,
+      "name": "food",
+      "price": 1
+    }
+  ]
+}
